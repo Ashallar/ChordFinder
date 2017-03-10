@@ -9,6 +9,18 @@ namespace MidiControllerProject.Library.Notes
 {
     public class Note : IComparable<Note>
     {
+        /// <summary>
+        /// WARNING: This constructor should be used only in UnitTests project.
+        /// </summary>
+        public Note(string noteName, int velocity)
+        {
+            Tuple<NoteType, int> infos = ExtractInformationsFromNoteName(noteName);
+
+            this.NoteType = infos.Item1;
+            this.Octave = infos.Item2;
+            this.Velocity = velocity;
+        }
+
         public Note(NoteEvent e)
         {
             Tuple<NoteType, int> infos = ExtractInformationsFromNoteName(e.NoteName);

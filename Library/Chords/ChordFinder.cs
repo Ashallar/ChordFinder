@@ -28,7 +28,7 @@ namespace MidiControllerProject.Library.Chords
         /// Gets the lowest note of Notes
         /// </summary>
         /// <returns></returns>
-        private Note GetLowestNote()
+        public Note GetLowestNote()
         {
             return Notes.Select(x => x.Value).Min();
         }
@@ -37,10 +37,9 @@ namespace MidiControllerProject.Library.Chords
         /// Gets the lowest note of Notes
         /// </summary>
         /// <returns></returns>
-        private Note GetHighestNote()
+        public Note GetHighestNote()
         {
             return Notes.Select(x => x.Value).Max();
         }
-
     }
 }

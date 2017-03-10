@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MidiControllerProject.Library;
+using MidiControllerProject.Library.Notes;
 
 namespace UnitTests
 {
@@ -10,7 +10,6 @@ namespace UnitTests
         [TestMethod]
         public void CompareNotes()
         {
-            //TODO: Tests unitaires de comparaison de notes.
         }
     }
 }
