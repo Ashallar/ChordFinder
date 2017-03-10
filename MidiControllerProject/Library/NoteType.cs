@@ -8,7 +8,7 @@ namespace MidiControllerProject.Library
 {
     public enum NoteType
     {
-        Undifined,
+        Undefined,
 
         C,
         CSharp,

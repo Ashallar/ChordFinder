@@ -31,7 +31,7 @@ namespace MidiControllerProject.Library
         private static Tuple<NoteType, int> ExtractInformationsFromNoteName(string noteName)
         {
             int octave = int.Parse(Regex.Match(noteName, @"-?\d+").Value);
-            NoteType note = GetNoteTypeFromString(new string(noteName.Where(char.IsLetter).ToArray()));
+            NoteType note = GetNoteTypeFromString(new string(noteName.Where(x => char.IsLetter(x) || x.Equals('#')).ToArray()));
 
             return new Tuple<NoteType, int>(note, octave);
         }
@@ -60,6 +60,8 @@ namespace MidiControllerProject.Library
                 case "F#":
                     return NoteType.FSharp;
                 case "G":
+                    return NoteType.G;
+                case "G#":
                     return NoteType.GSharp;
                 case "A":
                     return NoteType.A;
@@ -68,7 +70,7 @@ namespace MidiControllerProject.Library
                 case "B":
                     return NoteType.B;
                 default:
-                    return NoteType.Undifined;
+                    return NoteType.Undefined;
             }
         }
     }
