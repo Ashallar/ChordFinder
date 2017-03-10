@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using NAudio.Midi;
 
-namespace MidiControllerProject.Library
+namespace MidiControllerProject.Library.Notes
 {
-    public class Note
+    public class Note : IComparable<Note>
     {
         public Note(NoteEvent e)
         {
@@ -72,6 +72,21 @@ namespace MidiControllerProject.Library
                 default:
                     return NoteType.Undefined;
             }
+        }
+
+
+        /// <summary>
+        /// Returns the a string allowing to identify the Note. The string is made of: {NoteType}{Octave}
+        /// </summary>
+        /// <returns></returns>
+        public string GetNoteIdentifier()
+        {
+            return $"{this.NoteType.ToString()}{this.Octave}";
+        }
+
+        public int CompareTo(Note other)
+        {
+            return (this.Octave - other.Octave == 0) ? (this.NoteType - other.NoteType) : (this.Octave - other.Octave);
         }
     }
 }

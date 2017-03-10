@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MidiControllerProject.Library.Extensions
+namespace MidiControllerProject.Library.Notes
 {
     public static class NoteTypeExtensions
     {

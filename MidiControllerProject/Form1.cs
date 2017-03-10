@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using NAudio.Midi;
 using NAudio.CoreAudioApi.Interfaces;
 using NAudio.Wave;
-using MidiControllerProject.Library;
-using MidiControllerProject.Library.Extensions;
+using MidiControllerProject.Library.Notes;
+using MidiControllerProject.Library.Chords;
 
-namespace MidiControllerProject
+namespace ApplicationForms
 {
     public partial class Form1 : Form
     {
@@ -48,9 +48,16 @@ namespace MidiControllerProject
                 AddMessageToEventLogBox($"{count} - {note.NoteType.ToStringDisplayable()}{note.Octave.ToString()} Vel:{note.Velocity}{Environment.NewLine}");
                 UpdateKeyboardImage(note);
 
-                this.chordFinder.Notes.Add(note);
-
-            }
+                if (note.Velocity > 0)
+                {
+                    this.chordFinder.Notes.TryAdd(note.GetNoteIdentifier(), note);
+                }
+                else
+                {
+                    Note removedNote;
+                    this.chordFinder.Notes.TryRemove(note.GetNoteIdentifier(), out removedNote);
+                }
+             }
         }
 
 

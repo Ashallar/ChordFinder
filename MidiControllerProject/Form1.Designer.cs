@@ -1,4 +1,4 @@
-﻿namespace MidiControllerProject
+﻿namespace ApplicationForms
 {
     partial class Form1
     {
