@@ -19,8 +19,8 @@ namespace UnitTests
             finder.Notes.TryAdd(highNote.GetNoteIdentifier(), highNote);
             finder.Notes.TryAdd(lowNote.GetNoteIdentifier(), lowNote);
 
-            Assert.AreSame(finder.GetHighestNote(), highNote);
-            Assert.AreSame(finder.GetLowestNote(), lowNote);
+            Assert.AreSame(highNote, finder.GetHighestNote());
+            Assert.AreSame(lowNote, finder.GetLowestNote());
         }
 
         [TestMethod]
@@ -34,8 +34,8 @@ namespace UnitTests
             finder.Notes.TryAdd(highNote.GetNoteIdentifier(), highNote);
             finder.Notes.TryAdd(lowNote.GetNoteIdentifier(), lowNote);
 
-            Assert.AreSame(finder.GetHighestNote(), highNote);
-            Assert.AreSame(finder.GetLowestNote(), lowNote);
+            Assert.AreSame(highNote, finder.GetHighestNote());
+            Assert.AreSame(lowNote, finder.GetLowestNote());
         }
     }
 }

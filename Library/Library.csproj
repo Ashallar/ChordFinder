@@ -45,6 +45,7 @@
     <Compile Include="Notes\NoteType.cs" />
     <Compile Include="Notes\NoteTypeExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scales\CMajorScale.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -106,5 +106,24 @@ namespace MidiControllerProject.Library.Notes
         {
             return (other.NoteType - this.NoteType) + ((other.Octave - this.Octave) * 12);
         }
+
+        /// <summary>
+        /// Determines whether the other note is a Major Third of the note.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool IsMajorThird(Note other)
+        {
+            return this.GetHalfToneGap(other) == 4;
+        }
+
+        /// <summary>
+        /// Determines whether the other note is a Minor Third of the note.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsMinorThird(Note other)
+        {
+            return this.GetHalfToneGap(other) == 3;
+        }
     }
 }
