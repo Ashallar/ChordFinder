@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using NAudio.Midi;
 
 namespace MidiControllerProject.Library.Notes
 {
@@ -19,15 +18,6 @@ namespace MidiControllerProject.Library.Notes
             this.NoteType = infos.Item1;
             this.Octave = infos.Item2;
             this.Velocity = velocity;
-        }
-
-        public Note(NoteEvent e)
-        {
-            Tuple<NoteType, int> infos = ExtractInformationsFromNoteName(e.NoteName);
-
-            this.NoteType = infos.Item1;
-            this.Octave = infos.Item2;
-            this.Velocity = e.Velocity;
         }
 
         public NoteType NoteType { get; }

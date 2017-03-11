@@ -44,7 +44,7 @@ namespace ApplicationForms
             if (noteEvent != null)
             {
                 count++;
-                Note note = new Note(noteEvent);
+                Note note = new Note(noteEvent.NoteName, noteEvent.Velocity);
                 AddMessageToEventLogBox($"{count} - {note.NoteType.ToStringDisplayable()}{note.Octave.ToString()} Vel:{note.Velocity}{Environment.NewLine}");
                 UpdateKeyboardImage(note);
 
