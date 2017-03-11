@@ -15,6 +15,11 @@ namespace MidiControllerProject.Library.Notes
         {
             Tuple<NoteType, int> infos = ExtractInformationsFromNoteName(noteName);
 
+            if (infos.Item1 == NoteType.Undefined)
+            {
+                throw new InvalidOperationException("Couldn't determine note");
+            }
+
             this.NoteType = infos.Item1;
             this.Octave = infos.Item2;
             this.Velocity = velocity;
@@ -89,6 +94,17 @@ namespace MidiControllerProject.Library.Notes
         public int CompareTo(Note other)
         {
             return (this.Octave - other.Octave == 0) ? (this.NoteType - other.NoteType) : (this.Octave - other.Octave);
+        }
+
+
+        /// <summary>
+        /// Get half-tone gap of the two notes.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int GetHalfToneGap(Note other)
+        {
+            return (other.NoteType - this.NoteType) + ((other.Octave - this.Octave) * 12);
         }
     }
 }
