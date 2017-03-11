@@ -5,14 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using MidiControllerProject.Library.Notes;
 
-namespace Library.Scales
+namespace MidiControllerProject.Library.Scales
 {
-    public class AMajorScale
+    public class AMajorScale : Scale
     {
         public AMajorScale()
         {
-            this.Notes = new List<Note>();
-
             this.Notes.Add(new Note("A0", 0));
             this.Notes.Add(new Note("B0", 0));
             this.Notes.Add(new Note("C#0", 0));
@@ -21,7 +19,5 @@ namespace Library.Scales
             this.Notes.Add(new Note("F#0", 0));
             this.Notes.Add(new Note("G#0", 0));
         }
-
-        public List<Note> Notes { get; set; }
     }
 }

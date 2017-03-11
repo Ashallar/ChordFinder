@@ -55,6 +55,7 @@
     <Compile Include="ChordFinderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NoteTests.cs" />
+    <Compile Include="ScaleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj">

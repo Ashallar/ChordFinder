@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MidiControllerProject.Library.Chords;
 using MidiControllerProject.Library.Notes;
+using MidiControllerProject.Library.Scales;
+
 
 namespace TestEnvironment
 {
@@ -23,8 +25,15 @@ namespace TestEnvironment
             finder.Notes.TryAdd(c.GetNoteIdentifier(), c);
             finder.Notes.TryAdd(d.GetNoteIdentifier(), d);
 
+            var notes = finder.Notes.Select(x => x.Value).ToList();
 
+            CMajorScale scale = new CMajorScale();
 
+            if (scale.IsMatchingScale(notes))
+            {
+                Console.WriteLine("OK");
+            }
+            Console.WriteLine("OK");
         }
     }
 }
