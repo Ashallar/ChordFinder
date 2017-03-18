@@ -146,11 +146,27 @@ namespace ApplicationForms.Forms
             List<Scale> matchingScales = ScalesBook.GetMatchingScales(distinctNotes);
 
 
+
+            selectedChordsTextBox.Clear();
+            foreach (Chord chord in this.Chords)
+            {
+                selectedChordsTextBox.AppendText(chord.RootNote.NoteType.ToStringDisplayable() + " " + chord.Type.ToStringDisplayable() + Environment.NewLine);
+            }
+
             matchingScalesTextBox.Clear();
             foreach (Scale scale in matchingScales)
             {
                 matchingScalesTextBox.AppendText(scale.ScaleName + Environment.NewLine);
             }
+
+
+        }
+
+        private void clearChordsButton_Click(object sender, EventArgs e)
+        {
+            this.Chords.Clear();
+            this.selectedChordsTextBox.Clear();
+            this.matchingScalesTextBox.Clear();
         }
     }
 }
