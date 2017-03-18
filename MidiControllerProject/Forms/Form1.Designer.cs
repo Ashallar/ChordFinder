@@ -1,4 +1,4 @@
-﻿namespace ApplicationForms
+﻿namespace ApplicationForms.Forms
 {
     partial class Form1
     {
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 728);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.AS3);
             this.Controls.Add(this.GS3);
             this.Controls.Add(this.FS3);

@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Midi;
-using NAudio.CoreAudioApi.Interfaces;
 using NAudio.Wave;
 using MidiControllerProject.Library.Notes;
 using MidiControllerProject.Library.Chords;
 
-namespace ApplicationForms
+namespace ApplicationForms.Forms
 {
     public partial class Form1 : Form
     {
@@ -33,9 +26,13 @@ namespace ApplicationForms
         {
             string[] drivers = AsioOut.GetDriverNames();
 
-            MidiIn midi = new MidiIn(0);
-            midi.MessageReceived += Midi_MessageReceived;
-            midi.Start();
+            try
+            {
+                MidiIn midi = new MidiIn(0);
+                midi.MessageReceived += Midi_MessageReceived;
+                midi.Start();
+            }
+            catch { }
         }
 
         private void Midi_MessageReceived(object sender, MidiInMessageEventArgs e)
