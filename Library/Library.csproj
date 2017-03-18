@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chords\Chord.cs" />
     <Compile Include="Chords\ChordFinder.cs" />
+    <Compile Include="Chords\ChordType.cs" />
     <Compile Include="Notes\Note.cs" />
     <Compile Include="Notes\NoteType.cs" />
     <Compile Include="Notes\NoteTypeExtensions.cs" />
