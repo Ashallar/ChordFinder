@@ -17,6 +17,8 @@ namespace MidiControllerProject.Library.Scales
 
         public List<Note> Notes { get; set; }
 
+        public string ScaleName { get; set; }
+
         public bool IsMatchingScale(List<Note> notes)
         {
             return this.Notes.Select(x => x.NoteType).Intersect(notes.Select(x => x.NoteType)).Count() == notes.Count;

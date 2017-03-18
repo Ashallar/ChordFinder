@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Chords
+namespace MidiControllerProject.Library.Chords
 {
     public enum ChordType
     {

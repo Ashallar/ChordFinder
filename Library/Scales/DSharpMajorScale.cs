@@ -18,6 +18,8 @@ namespace MidiControllerProject.Library.Scales
             this.Notes.Add(new Note("A#0", 0));
             this.Notes.Add(new Note("C0", 0));
             this.Notes.Add(new Note("D0", 0));
+
+            this.ScaleName = "D# Major scale";
         }
     }
 }

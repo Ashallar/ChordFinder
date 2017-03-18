@@ -60,6 +60,7 @@
     <Compile Include="Scales\DMajorScale.cs" />
     <Compile Include="Scales\CMajorScale.cs" />
     <Compile Include="Scales\Scale.cs" />
+    <Compile Include="Scales\ScalesBook.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

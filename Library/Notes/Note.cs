@@ -25,11 +25,21 @@ namespace MidiControllerProject.Library.Notes
             this.Velocity = velocity;
         }
 
+        public Note(NoteType type)
+        {
+            this.NoteType = type;
+            this.Velocity = 0;
+            this.Octave = 0;
+        }
+
         public NoteType NoteType { get; }
 
         public int Octave { get; }
 
         public int? Velocity { get; }
+
+
+
 
         /// <summary>
         /// Extract NoteType and octave from NoteEvent.NoteName. Return a Tuple NoteType, int representing the note and the octave.
@@ -124,6 +134,40 @@ namespace MidiControllerProject.Library.Notes
         public bool IsMinorThird(Note other)
         {
             return this.GetHalfToneGap(other) == 3;
+        }
+
+
+        /// <summary>
+        /// Returns the minor third of the note.
+        /// </summary>
+        /// <returns></returns>
+        public Note GetNoteMinorThird()
+        {
+            NoteType minorThirdType = ((int)this.NoteType + 3) > 12 ? (this.NoteType + 3) - 12 : (this.NoteType + 3);
+
+            return new Note(minorThirdType);
+        }
+
+        /// <summary>
+        /// Returns the major third of the note.
+        /// </summary>
+        /// <returns></returns>
+        public Note GetNoteMajorThird()
+        {
+            NoteType majorThirdType = ((int)this.NoteType + 4) > 12 ? (this.NoteType + 4) - 12 : (this.NoteType + 4);
+
+            return new Note(majorThirdType);
+        }
+
+        /// <summary>
+        /// Returns the perfect fifth of the note.
+        /// </summary>
+        /// <returns></returns>
+        public Note GetNotePerfectFifth()
+        {
+            NoteType majorThirdType = ((int)this.NoteType + 7) > 12 ? (this.NoteType + 7) - 12 : (this.NoteType + 7);
+
+            return new Note(majorThirdType);
         }
     }
 }
