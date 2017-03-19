@@ -15,22 +15,9 @@ namespace MidiControllerProject.Library.Scales
         /// <returns></returns>
         public static List<Scale> GetAllScales()
         {
-            List<Scale> scales = new List<Scale>();
-
-            scales.Add(new CMajorScale());
-            scales.Add(new CSharpMajorScale());
-            scales.Add(new DMajorScale());
-            scales.Add(new DSharpMajorScale());
-            scales.Add(new EMajorScale());
-            scales.Add(new FMajorScale());
-            scales.Add(new FSharpMajorScale());
-            scales.Add(new GMajorScale());
-            scales.Add(new GSharpMajorScale());
-            scales.Add(new AMajorScale());
-            scales.Add(new ASharpMajorScale());
-            scales.Add(new BMajorScale());
-
-            return scales;
+            return GetMajorScales()
+                .Concat(GetMinorScales())
+                .ToList();
         }
 
         /// <summary>
@@ -56,6 +43,31 @@ namespace MidiControllerProject.Library.Scales
 
             return scales;
         }
+
+        /// <summary>
+        /// Returns all Minor Scales.
+        /// </summary>
+        /// <returns></returns>
+        public static List<Scale> GetMinorScales()
+        {
+            List<Scale> scales = new List<Scale>();
+
+            scales.Add(new CMinorScale());
+            scales.Add(new CSharpMinorScale());
+            scales.Add(new DMinorScale());
+            scales.Add(new DSharpMinorScale());
+            scales.Add(new EMinorScale());
+            scales.Add(new FMinorScale());
+            scales.Add(new FSharpMinorScale());
+            scales.Add(new GMinorScale());
+            scales.Add(new GSharpMinorScale());
+            scales.Add(new AMinorScale());
+            scales.Add(new ASharpMinorScale());
+            scales.Add(new BMinorScale());
+
+            return scales;
+        }
+
 
         public static List<Scale> GetMatchingScales(List<Note> notes)
         {
