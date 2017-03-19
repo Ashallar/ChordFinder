@@ -9,9 +9,9 @@ namespace MidiControllerProject.Library.Chords
 {
     public class Chord
     {
-        public Chord(Note rootNote, ChordType type)
+        public Chord(Note rootNote, ModeType type)
         {
-            if (rootNote == null || type == ChordType.Undefined)
+            if (rootNote == null || type == ModeType.Undefined)
                 throw new ArgumentException("The note you provided is null or the type of the ChordType is undefined");
 
             this.RootNote = rootNote;
@@ -20,7 +20,7 @@ namespace MidiControllerProject.Library.Chords
 
         public Note RootNote { get; set; }
 
-        public ChordType Type { get; set; }
+        public ModeType Type { get; set; }
 
         public List<Note> GetNotes()
         {
@@ -28,12 +28,12 @@ namespace MidiControllerProject.Library.Chords
 
             notes.Add(RootNote);
 
-            if (this.Type == ChordType.Major)
+            if (this.Type == ModeType.Major)
             {
                 notes.Add(RootNote.GetNoteMajorThird());
                 notes.Add(RootNote.GetNotePerfectFifth());
             }
-            else if (this.Type == ChordType.Minor)
+            else if (this.Type == ModeType.Minor)
             {
                 notes.Add(RootNote.GetNoteMinorThird());
                 notes.Add(RootNote.GetNotePerfectFifth());

@@ -19,8 +19,8 @@ namespace ApplicationForms.Forms
             InitializeComponent();
             this.Chords = new List<Chord>();
             chordSelectorList.ItemSelectionChanged += ChordSelectorList_ItemSelectionChanged;
-            chordTypeComboBox.DataSource = Enum.GetNames(typeof(ChordType)).Skip(1).ToList();
-            populateListFromSelectedChordType(ChordType.Major);
+            chordTypeComboBox.DataSource = Enum.GetNames(typeof(ModeType)).Skip(1).ToList();
+            populateListFromSelectedChordType(ModeType.Major);
         }
 
 
@@ -28,7 +28,7 @@ namespace ApplicationForms.Forms
 
         private void chordTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ChordType type = (ChordType)Enum.Parse(typeof(ChordType), chordTypeComboBox.SelectedValue.ToString());
+            ModeType type = (ModeType)Enum.Parse(typeof(ModeType), chordTypeComboBox.SelectedValue.ToString());
 
             populateListFromSelectedChordType(type);
         }
@@ -37,14 +37,14 @@ namespace ApplicationForms.Forms
         {
             if (e.IsSelected)
             {
-                ChordType type = (ChordType)Enum.Parse(typeof(ChordType), chordTypeComboBox.SelectedValue.ToString());
+                ModeType type = (ModeType)Enum.Parse(typeof(ModeType), chordTypeComboBox.SelectedValue.ToString());
 
-                if (type == ChordType.Major)
+                if (type == ModeType.Major)
                 {
                     this.Chords.Add(new Chord(new Note(e.Item.Text + "0", 0), type));
 
                 }
-                else if (type == ChordType.Minor)
+                else if (type == ModeType.Minor)
                 {
                     switch (e.Item.Text)
                     {
@@ -94,11 +94,11 @@ namespace ApplicationForms.Forms
             }
         }
 
-        private void populateListFromSelectedChordType(ChordType type)
+        private void populateListFromSelectedChordType(ModeType type)
         {
             chordSelectorList.Items.Clear();
 
-            if (type == ChordType.Major)
+            if (type == ModeType.Major)
             {
                 chordSelectorList.Items.Add(new ListViewItem("C"));
                 chordSelectorList.Items.Add(new ListViewItem("C#"));

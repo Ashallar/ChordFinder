@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace MidiControllerProject.Library.Chords
 {
-    public enum ChordType
+    public enum ModeType
     {
         Undefined,
         Major,
         Minor,
-        Seventh
     }
 }

@@ -8,16 +8,14 @@ namespace MidiControllerProject.Library.Chords
 {
     public static class ChordTypeExtensions
     {
-        public static string ToStringDisplayable(this ChordType type)
+        public static string ToStringDisplayable(this ModeType type)
         {
             switch (type)
             {
-                case ChordType.Major:
+                case ModeType.Major:
                     return "Majeur";
-                case ChordType.Minor:
+                case ModeType.Minor:
                     return "mineur";
-                case ChordType.Seventh:
-                    return "Septième";
                 default:
                     return type.ToString();
             }
