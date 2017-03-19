@@ -11,13 +11,13 @@ namespace MidiControllerProject.Library.Scales
     {
         public BMajorScale()
         {
-            this.Notes.Add(new Note("B0", 0));
-            this.Notes.Add(new Note("C#0", 0));
-            this.Notes.Add(new Note("D#0", 0));
-            this.Notes.Add(new Note("E0", 0));
-            this.Notes.Add(new Note("F#0", 0));
-            this.Notes.Add(new Note("G#0", 0));
-            this.Notes.Add(new Note("A#0", 0));
+            this.Notes.Add(new Note(NoteType.B));
+            this.Notes.Add(new Note(NoteType.CSharp));
+            this.Notes.Add(new Note(NoteType.DSharp));
+            this.Notes.Add(new Note(NoteType.E));
+            this.Notes.Add(new Note(NoteType.FSharp));
+            this.Notes.Add(new Note(NoteType.GSharp));
+            this.Notes.Add(new Note(NoteType.ASharp));
 
             this.ScaleName = "B Major scale";
         }
