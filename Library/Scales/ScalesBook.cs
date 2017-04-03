@@ -28,18 +28,31 @@ namespace MidiControllerProject.Library.Scales
         {
             List<Scale> scales = new List<Scale>();
 
-            scales.Add(new CMajorScale());
-            scales.Add(new CSharpMajorScale());
-            scales.Add(new DMajorScale());
-            scales.Add(new DSharpMajorScale());
-            scales.Add(new EMajorScale());
-            scales.Add(new FMajorScale());
-            scales.Add(new FSharpMajorScale());
-            scales.Add(new GMajorScale());
-            scales.Add(new GSharpMajorScale());
-            scales.Add(new AMajorScale());
-            scales.Add(new ASharpMajorScale());
-            scales.Add(new BMajorScale());
+            scales.Add(new MajorScale(new Note(NoteType.C)));
+            scales.Add(new MajorScale(new Note(NoteType.CSharp)));
+            scales.Add(new MajorScale(new Note(NoteType.D)));
+            scales.Add(new MajorScale(new Note(NoteType.DSharp)));
+            scales.Add(new MajorScale(new Note(NoteType.E)));
+            scales.Add(new MajorScale(new Note(NoteType.F)));
+            scales.Add(new MajorScale(new Note(NoteType.FSharp)));
+            scales.Add(new MajorScale(new Note(NoteType.G)));
+            scales.Add(new MajorScale(new Note(NoteType.GSharp)));
+            scales.Add(new MajorScale(new Note(NoteType.A)));
+            scales.Add(new MajorScale(new Note(NoteType.ASharp)));
+            scales.Add(new MajorScale(new Note(NoteType.B)));
+
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.C)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.CSharp)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.D)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.DSharp)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.E)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.F)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.FSharp)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.G)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.GSharp)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.A)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.ASharp)));
+            scales.Add(new PentatonicMajorScale(new Note(NoteType.B)));
 
             return scales;
         }
@@ -52,18 +65,31 @@ namespace MidiControllerProject.Library.Scales
         {
             List<Scale> scales = new List<Scale>();
 
-            scales.Add(new CMinorScale());
-            scales.Add(new CSharpMinorScale());
-            scales.Add(new DMinorScale());
-            scales.Add(new DSharpMinorScale());
-            scales.Add(new EMinorScale());
-            scales.Add(new FMinorScale());
-            scales.Add(new FSharpMinorScale());
-            scales.Add(new GMinorScale());
-            scales.Add(new GSharpMinorScale());
-            scales.Add(new AMinorScale());
-            scales.Add(new ASharpMinorScale());
-            scales.Add(new BMinorScale());
+            scales.Add(new MinorScale(new Note(NoteType.C)));
+            scales.Add(new MinorScale(new Note(NoteType.CSharp)));
+            scales.Add(new MinorScale(new Note(NoteType.D)));
+            scales.Add(new MinorScale(new Note(NoteType.DSharp)));
+            scales.Add(new MinorScale(new Note(NoteType.E)));
+            scales.Add(new MinorScale(new Note(NoteType.F)));
+            scales.Add(new MinorScale(new Note(NoteType.FSharp)));
+            scales.Add(new MinorScale(new Note(NoteType.G)));
+            scales.Add(new MinorScale(new Note(NoteType.GSharp)));
+            scales.Add(new MinorScale(new Note(NoteType.A)));
+            scales.Add(new MinorScale(new Note(NoteType.ASharp)));
+            scales.Add(new MinorScale(new Note(NoteType.B)));
+
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.C)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.CSharp)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.D)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.DSharp)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.E)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.F)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.FSharp)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.G)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.GSharp)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.A)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.ASharp)));
+            scales.Add(new PentatonicMinorScale(new Note(NoteType.B)));
 
             return scales;
         }

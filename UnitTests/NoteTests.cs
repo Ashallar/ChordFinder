@@ -59,5 +59,35 @@ namespace UnitTests
 
             Assert.AreEqual(false, c.IsMinorThird(d));
         }
+
+        [TestMethod]
+        public void GetNotesFromTonic()
+        {
+            Note tonic = new Note(NoteType.C);
+
+            Note secondFlat = tonic.GetNoteSecondFlat();
+            Note second = tonic.GetNoteSecond();
+            Note minorThird = tonic.GetNoteMinorThird();
+            Note majorThird = tonic.GetNoteThird();
+            Note fourth = tonic.GetNoteFourth();
+            Note diminishedFifth = tonic.GetNoteDiminishedFifth();
+            Note fifth = tonic.GetNoteFifth();
+            Note augmentedFifth = tonic.GetNoteAugmentedFifth();
+            Note sixth = tonic.GetNoteSixth();
+            Note minorSeventh = tonic.GetNoteMinorSeventh();
+            Note seventh = tonic.GetNoteSeventh();
+
+            Assert.AreEqual(0, secondFlat.CompareTo(new Note(NoteType.CSharp)));
+            Assert.AreEqual(0, second.CompareTo(new Note(NoteType.D)));
+            Assert.AreEqual(0, minorThird.CompareTo(new Note(NoteType.DSharp)));
+            Assert.AreEqual(0, majorThird.CompareTo(new Note(NoteType.E)));
+            Assert.AreEqual(0, fourth.CompareTo(new Note(NoteType.F)));
+            Assert.AreEqual(0, diminishedFifth.CompareTo(new Note(NoteType.FSharp)));
+            Assert.AreEqual(0, fifth.CompareTo(new Note(NoteType.G)));
+            Assert.AreEqual(0, augmentedFifth.CompareTo(new Note(NoteType.GSharp)));
+            Assert.AreEqual(0, sixth.CompareTo(new Note(NoteType.A)));
+            Assert.AreEqual(0, minorSeventh.CompareTo(new Note(NoteType.ASharp)));
+            Assert.AreEqual(0, seventh.CompareTo(new Note(NoteType.B)));
+        }
     }
 }

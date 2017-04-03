@@ -30,13 +30,13 @@ namespace MidiControllerProject.Library.Chords
 
             if (this.Type == ModeType.Major)
             {
-                notes.Add(RootNote.GetNoteMajorThird());
-                notes.Add(RootNote.GetNotePerfectFifth());
+                notes.Add(RootNote.GetNoteThird());
+                notes.Add(RootNote.GetNoteFifth());
             }
             else if (this.Type == ModeType.Minor)
             {
                 notes.Add(RootNote.GetNoteMinorThird());
-                notes.Add(RootNote.GetNotePerfectFifth());
+                notes.Add(RootNote.GetNoteFifth());
             }
             else { }
 

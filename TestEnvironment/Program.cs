@@ -14,26 +14,14 @@ namespace TestEnvironment
     {
         static void Main(string[] args)
         {
-            ChordFinder finder = new ChordFinder();
-            Note a = new Note("C3", 0);
-            Note b = new Note("E3", 0);
-            Note c = new Note("G3", 0);
-            Note d = new Note("B3", 0);
+            PentatonicMinorScale scale = new PentatonicMinorScale(new Note(NoteType.C));
+            List<Note> notes = new List<Note>();
 
-            finder.Notes.TryAdd(a.GetNoteIdentifier(), a);
-            finder.Notes.TryAdd(b.GetNoteIdentifier(), b);
-            finder.Notes.TryAdd(c.GetNoteIdentifier(), c);
-            finder.Notes.TryAdd(d.GetNoteIdentifier(), d);
+            notes.Add(new Note(NoteType.C));
+            notes.Add(new Note(NoteType.G));
 
-            var notes = finder.Notes.Select(x => x.Value).ToList();
+            var res = scale.IsMatchingScale(notes);
 
-            CMajorScale scale = new CMajorScale();
-
-            if (scale.IsMatchingScale(notes))
-            {
-                Console.WriteLine("OK");
-            }
-            Console.WriteLine("OK");
         }
     }
 }
