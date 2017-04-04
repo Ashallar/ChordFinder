@@ -31,11 +31,11 @@
             this.chordTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chordSelectorList = new System.Windows.Forms.ListView();
-            this.matchingScalesTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.clearChordsButton = new System.Windows.Forms.Button();
-            this.selectedChordsTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.selectedChordsListBox = new System.Windows.Forms.ListBox();
+            this.matchingScalesListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // chordTypeComboBox
@@ -68,14 +68,6 @@
             this.chordSelectorList.TabIndex = 2;
             this.chordSelectorList.UseCompatibleStateImageBehavior = false;
             // 
-            // matchingScalesTextBox
-            // 
-            this.matchingScalesTextBox.Location = new System.Drawing.Point(166, 409);
-            this.matchingScalesTextBox.Multiline = true;
-            this.matchingScalesTextBox.Name = "matchingScalesTextBox";
-            this.matchingScalesTextBox.Size = new System.Drawing.Size(362, 185);
-            this.matchingScalesTextBox.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -95,14 +87,6 @@
             this.clearChordsButton.UseVisualStyleBackColor = true;
             this.clearChordsButton.Click += new System.EventHandler(this.clearChordsButton_Click);
             // 
-            // selectedChordsTextBox
-            // 
-            this.selectedChordsTextBox.Location = new System.Drawing.Point(166, 189);
-            this.selectedChordsTextBox.Multiline = true;
-            this.selectedChordsTextBox.Name = "selectedChordsTextBox";
-            this.selectedChordsTextBox.Size = new System.Drawing.Size(362, 184);
-            this.selectedChordsTextBox.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -112,16 +96,34 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Accords sélectionnés:";
             // 
+            // selectedChordsListBox
+            // 
+            this.selectedChordsListBox.FormattingEnabled = true;
+            this.selectedChordsListBox.ItemHeight = 16;
+            this.selectedChordsListBox.Location = new System.Drawing.Point(166, 189);
+            this.selectedChordsListBox.Name = "selectedChordsListBox";
+            this.selectedChordsListBox.Size = new System.Drawing.Size(362, 180);
+            this.selectedChordsListBox.TabIndex = 8;
+            // 
+            // matchingScalesListBox
+            // 
+            this.matchingScalesListBox.FormattingEnabled = true;
+            this.matchingScalesListBox.ItemHeight = 16;
+            this.matchingScalesListBox.Location = new System.Drawing.Point(166, 414);
+            this.matchingScalesListBox.Name = "matchingScalesListBox";
+            this.matchingScalesListBox.Size = new System.Drawing.Size(362, 196);
+            this.matchingScalesListBox.TabIndex = 9;
+            // 
             // ScaleFromChordsSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.matchingScalesListBox);
+            this.Controls.Add(this.selectedChordsListBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.selectedChordsTextBox);
             this.Controls.Add(this.clearChordsButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.matchingScalesTextBox);
             this.Controls.Add(this.chordSelectorList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chordTypeComboBox);
@@ -137,10 +139,10 @@
         private System.Windows.Forms.ComboBox chordTypeComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView chordSelectorList;
-        private System.Windows.Forms.TextBox matchingScalesTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button clearChordsButton;
-        private System.Windows.Forms.TextBox selectedChordsTextBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox selectedChordsListBox;
+        private System.Windows.Forms.ListBox matchingScalesListBox;
     }
 }

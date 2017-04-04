@@ -6,25 +6,56 @@ using System.Windows.Forms;
 using MidiControllerProject.Library.Chords;
 using MidiControllerProject.Library.Notes;
 using MidiControllerProject.Library.Scales;
+using System.ComponentModel;
 
 namespace ApplicationForms.Forms
 {
     public partial class ScaleFromChordsSelection : Form
     {
-        public List<Chord> Chords { get; }
 
+        /// <summary>
+        /// The list of selected chords.
+        /// </summary>
+        public BindingList<Chord> Chords { get; }
+
+        /// <summary>
+        /// The list of matching scales.
+        /// </summary>
+        public BindingList<Scale> MatchingScales { get; }
 
         public ScaleFromChordsSelection()
         {
             InitializeComponent();
-            this.Chords = new List<Chord>();
+            this.Chords = new BindingList<Chord>();
+            this.MatchingScales = new BindingList<Scale>();
+
             chordSelectorList.ItemSelectionChanged += ChordSelectorList_ItemSelectionChanged;
+
+            selectedChordsListBox.DataSource = this.Chords;
+            selectedChordsListBox.SelectedValueChanged += SelectedChordsListBox_SelectedValueChanged;
+            selectedChordsListBox.DisplayMember = "ChordName";
+            selectedChordsListBox.ValueMember = "ChordName";
+
+            matchingScalesListBox.DataSource = this.MatchingScales;
+            matchingScalesListBox.DisplayMember = "ScaleName";
+            matchingScalesListBox.ValueMember = "ScaleName";
+
             chordTypeComboBox.DataSource = Enum.GetNames(typeof(ModeType)).Skip(1).ToList();
             populateListFromSelectedChordType(ModeType.Major);
         }
 
 
         /* EVENTS */
+
+        private void SelectedChordsListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Chord chord = (Chord)selectedChordsListBox.SelectedItem;
+            if (chord != null)
+            {
+                this.Chords.Remove(chord);
+            }
+            DetermineScaleFromNotes();
+        }
 
         private void chordTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -94,6 +125,9 @@ namespace ApplicationForms.Forms
             }
         }
 
+
+        /* PRIVATE FUNCTIONS */
+
         private void populateListFromSelectedChordType(ModeType type)
         {
             chordSelectorList.Items.Clear();
@@ -133,6 +167,7 @@ namespace ApplicationForms.Forms
         private List<Note> GetDistinctNotesFromChordList()
         {
             List<Note> notes = new List<Note>();
+
             foreach (Chord chord in this.Chords)
             {
                 notes = notes.Concat(chord.GetNotes()).ToList();
@@ -143,30 +178,19 @@ namespace ApplicationForms.Forms
         private void DetermineScaleFromNotes()
         {
             List<Note> distinctNotes = GetDistinctNotesFromChordList();
+
             List<Scale> matchingScales = ScalesBook.GetMatchingScales(distinctNotes);
-
-
-
-            selectedChordsTextBox.Clear();
-            foreach (Chord chord in this.Chords)
-            {
-                selectedChordsTextBox.AppendText(chord.RootNote.NoteType.ToStringDisplayable() + " " + chord.Type.ToStringDisplayable() + Environment.NewLine);
-            }
-
-            matchingScalesTextBox.Clear();
+            this.MatchingScales.Clear();
             foreach (Scale scale in matchingScales)
             {
-                matchingScalesTextBox.AppendText(scale.ScaleName + Environment.NewLine);
+                this.MatchingScales.Add(scale);
             }
-
-
         }
 
         private void clearChordsButton_Click(object sender, EventArgs e)
         {
             this.Chords.Clear();
-            this.selectedChordsTextBox.Clear();
-            this.matchingScalesTextBox.Clear();
+            this.MatchingScales.Clear();
         }
     }
 }

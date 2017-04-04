@@ -18,6 +18,17 @@ namespace MidiControllerProject.Library.Chords
             this.Type = type;
         }
 
+        /// <summary>
+        /// Returns a  with the chord name.
+        /// </summary>
+        public string ChordName
+        {
+            get
+            {
+                return $"{this.RootNote.NoteType.ToStringDisplayable()} {this.Type.ToStringDisplayable()}";
+            }
+        }
+
         public Note RootNote { get; set; }
 
         public ModeType Type { get; set; }
