@@ -50,6 +50,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scales\MajorScale.cs" />
     <Compile Include="Scales\MinorScale.cs" />
+    <Compile Include="Scales\Modes\AeolianScale.cs" />
+    <Compile Include="Scales\Modes\DorianScale.cs" />
+    <Compile Include="Scales\Modes\IonianScale.cs" />
+    <Compile Include="Scales\Modes\LocrianScale.cs" />
+    <Compile Include="Scales\Modes\LydianScale.cs" />
+    <Compile Include="Scales\Modes\MelodicMajorScale.cs" />
+    <Compile Include="Scales\Modes\MelodicMinorScale.cs" />
+    <Compile Include="Scales\Modes\MixolydianScale.cs" />
+    <Compile Include="Scales\Modes\PhrygianScale.cs" />
     <Compile Include="Scales\PentatonicMajorScale.cs" />
     <Compile Include="Scales\PentatonicMinorScale.cs" />
     <Compile Include="Scales\Scale.cs" />
