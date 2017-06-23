@@ -20,6 +20,17 @@ namespace MidiControllerProject.Library.Chords
                     return type.ToString();
             }
         }
-
+        public static string ToShortString(this ModeType type)
+        {
+            switch (type)
+            {
+                case ModeType.Major:
+                    return "";
+                case ModeType.Minor:
+                    return "m";
+                default:
+                    return type.ToString();
+            }
+        }
     }
 }

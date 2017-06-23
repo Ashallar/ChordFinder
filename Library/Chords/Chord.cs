@@ -18,14 +18,36 @@ namespace MidiControllerProject.Library.Chords
             this.Type = type;
         }
 
+        public Chord(NoteType rootNote, ModeType mode)
+        {
+            if (rootNote == NoteType.Undefined)
+                throw new ArgumentException("NoteType cannot be undefined to instantiate a chord");
+            if (mode == ModeType.Undefined)
+                throw new ArgumentException("ModeType cannot be undefined to instantiate a chord");
+
+            this.RootNote = new Note(rootNote);
+            this.Type = mode;
+        }
+
         /// <summary>
-        /// Returns a  with the chord name.
+        /// Returns a string with the chord name.
         /// </summary>
         public string ChordName
         {
             get
             {
                 return $"{this.RootNote.NoteType.ToStringDisplayable()} {this.Type.ToStringDisplayable()}";
+            }
+        }
+
+        /// <summary>
+        /// Returns a short string with the chord name.
+        /// </summary>
+        public string ShortChordName
+        {
+            get
+            {
+                return $"{this.RootNote.NoteType.ToStringDisplayable()}{this.Type.ToShortString()}";
             }
         }
 
