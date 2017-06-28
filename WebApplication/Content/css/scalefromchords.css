@@ -1,0 +1,39 @@
+﻿.chords-selector-container{
+    display: flex;
+    width: 80%;
+}
+
+.box{
+    border: solid 2px black;
+    margin: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.list-in-box{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.chords{
+    width: 100%;
+    display:block;
+    background-color:cadetblue;
+    margin-bottom: 1px;
+    color: white;
+    cursor: pointer;
+}
+
+.chords:hover{
+    opacity: 0.8;
+    color:inherit;
+}
+
+.available-chords{
+    /*background-color:darkgray;*/
+}
+
+.selected-chords{
+    /*background-color: darkslategray;*/
+}

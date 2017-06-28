@@ -1,22 +1,34 @@
 ﻿@model ScaleFromChordsModel
-
 @{
     ViewBag.Title = "Index";
 }
+
+<link href="~/Content/css/Scalefromchords.css" rel="stylesheet" type="text/css" />
 
 <h2>Scale from chords</h2>
 
 @*@Html.DropDownList("chord-mode-select", EnumHelper.GetSelectList(typeof(MidiControllerProject.Library.Chords.ModeType)).Skip(1), null, new { @onChange = "populateChordsFromSeletedType()" })*@
 
-<input id="filter-chords" onkeyup="filterChords()" type="text"/>
+<input id="filter-chords" onkeyup="filterChords()" type="text" placeholder="Filter"/>
 
-<div>
-    <ul id="chords-list">
-        @foreach (var chord in Model.AvailableChords)
-        {
-            <li><a>@chord.ShortChordName</a></li>
-        }
-    </ul>
+<div class="chords-selector-container">
+    <div style="width:100%;">
+        <h4>Available chords</h4>
+        <div class="box available-chords">
+            <ul class="list-in-box" id="chords-list">
+                @foreach (var chord in Model.AvailableChords)
+                {
+                    <li><a class="chords">@chord.ShortChordName</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div style="width:100%;">
+        <h4>Selected chords</h4>
+        <div class="box selected-chords">
+        
+        </div>
+    </div>
 </div>
 
 <script src="~/Content/js/scalefromchords.js"></script>
