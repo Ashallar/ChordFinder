@@ -1,28 +1,25 @@
 ﻿.chords-selector-container{
     display: flex;
-    width: 80%;
+    height: 300px;
 }
 
 .box{
     border: solid 2px black;
     margin: 2px;
-    width: 100%;
-    height: 100%;
 }
 
 .list-in-box{
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+    /*display: flex;*/
 }
 
 .chords{
-    width: 100%;
+    width: 50px;
     display:block;
-    background-color:cadetblue;
-    margin-bottom: 1px;
+    background-color: cadetblue;
     color: white;
-    cursor: pointer;
 }
 
 .chords:hover{
@@ -36,4 +33,8 @@
 
 .selected-chords{
     /*background-color: darkslategray;*/
+}
+
+.two-columns{
+    width: 50%;
 }

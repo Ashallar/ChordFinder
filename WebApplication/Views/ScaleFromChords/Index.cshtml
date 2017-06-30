@@ -12,21 +12,20 @@
 <input id="filter-chords" onkeyup="filterChords()" type="text" placeholder="Filter"/>
 
 <div class="chords-selector-container">
-    <div style="width:100%;">
+    <div style="height: 100%;">
         <h4>Available chords</h4>
         <div class="box available-chords">
-            <ul class="list-in-box" id="chords-list">
+           <ul class="list-in-box" id="chords-list">
                 @foreach (var chord in Model.AvailableChords)
                 {
-                    <li><a class="chords">@chord.ShortChordName</a></li>
+                    <li><button class="chords">@chord.ShortChordName</button></li>
                 }
             </ul>
         </div>
     </div>
-    <div style="width:100%;">
-        <h4>Selected chords</h4>
+    <div style="height: 100%;">
+        <h4>Selected chords</h4>        
         <div class="box selected-chords">
-        
         </div>
     </div>
 </div>

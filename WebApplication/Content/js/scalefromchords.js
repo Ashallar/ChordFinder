@@ -24,7 +24,7 @@ function filterChords() {
         var chords = ul.getElementsByTagName("li");
 
         for (var i = 0; i < chords.length; i++) {
-            var a = chords[i].getElementsByTagName("a")[0];
+            var a = chords[i].getElementsByTagName("button")[0];
 
             if (a.innerHTML.toLowerCase().indexOf(filterText) > -1) {
                 chords[i].style.display = "";
