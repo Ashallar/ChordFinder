@@ -11,7 +11,7 @@ namespace MidiControllerProject.Library.Notes
         /// <summary>
         /// WARNING: This constructor should be used only in UnitTests project.
         /// </summary>
-        public Note(string noteName, int velocity)
+        public Note(string noteName, int velocity = 0)
         {
             Tuple<NoteType, int> infos = ExtractInformationsFromNoteName(noteName);
 
@@ -60,7 +60,7 @@ namespace MidiControllerProject.Library.Notes
         /// </summary>
         /// <param name="input">String representing a note</param>
         /// <returns></returns>
-        private static NoteType GetNoteTypeFromString(string input)
+        public static NoteType GetNoteTypeFromString(string input)
         {
             switch (input)
             {

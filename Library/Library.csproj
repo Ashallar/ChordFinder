@@ -43,6 +43,7 @@
     <Compile Include="Chords\Chord.cs" />
     <Compile Include="Chords\ChordFinder.cs" />
     <Compile Include="Chords\ChordsBook.cs" />
+    <Compile Include="Chords\ChordsListExtensions.cs" />
     <Compile Include="Chords\ModeType.cs" />
     <Compile Include="Chords\ChordTypeExtensions.cs" />
     <Compile Include="Notes\Note.cs" />

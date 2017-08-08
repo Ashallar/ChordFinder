@@ -29,6 +29,20 @@ namespace MidiControllerProject.Library.Chords
             this.Type = mode;
         }
 
+        public Chord(string chordName)
+        {
+            string rootNote = string.Empty;
+
+            foreach (char c in chordName)
+            {
+                rootNote += (c == 'A' || c == 'B' || c == 'C' || c == 'D' || c == 'E' || c == 'F' || c == 'G' || c == '#') ? c.ToString() : string.Empty;
+            }
+            this.Type = chordName.Contains('m') ? ModeType.Minor : ModeType.Major;
+
+            NoteType noteType = Note.GetNoteTypeFromString(rootNote);
+            this.RootNote = new Note(noteType);
+        }
+
         /// <summary>
         /// Returns a string with the chord name.
         /// </summary>

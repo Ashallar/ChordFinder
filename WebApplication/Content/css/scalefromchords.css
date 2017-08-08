@@ -1,22 +1,18 @@
 ﻿.chords-selector-container{
     display: flex;
-    height: 300px;
+    align-items: stretch;
+    width: 30%;
 }
 
 .box{
     border: solid 2px black;
     margin: 2px;
-}
-
-.list-in-box{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    /*display: flex;*/
+    overflow: auto;
+    height: 500px;
 }
 
 .chords{
-    width: 50px;
+    width: 100%;
     display:block;
     background-color: cadetblue;
     color: white;
@@ -27,14 +23,11 @@
     color:inherit;
 }
 
+
 .available-chords{
-    /*background-color:darkgray;*/
+    white-space: nowrap;
 }
 
 .selected-chords{
     /*background-color: darkslategray;*/
-}
-
-.two-columns{
-    width: 50%;
 }
