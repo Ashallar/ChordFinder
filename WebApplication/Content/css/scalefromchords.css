@@ -24,6 +24,18 @@
 }
 
 
+.scales{
+    width: 100%;
+    display:block;
+    background-color: deepskyblue;
+    color: white;
+}
+
+.scales:hover{
+    opacity: 0.8;
+    color:inherit;
+}
+
 .available-chords{
     white-space: nowrap;
 }

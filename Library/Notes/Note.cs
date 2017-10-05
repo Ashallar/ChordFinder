@@ -93,7 +93,6 @@ namespace MidiControllerProject.Library.Notes
             }
         }
 
-
         /// <summary>
         /// Returns the a string allowing to identify the Note. The string is made of: {NoteType}{Octave}
         /// </summary>
@@ -107,7 +106,6 @@ namespace MidiControllerProject.Library.Notes
         {
             return (this.Octave - other.Octave == 0) ? (this.NoteType - other.NoteType) : (this.Octave - other.Octave);
         }
-
 
         /// <summary>
         /// Get half-tone gap of the two notes.
@@ -137,8 +135,6 @@ namespace MidiControllerProject.Library.Notes
         {
             return this.GetHalfToneGap(other) == 3;
         }
-
-
 
         /// <summary>
         /// Returns the second flat (+1 half-tones) of the note.
@@ -260,6 +256,5 @@ namespace MidiControllerProject.Library.Notes
 
             return new Note(seventhType);
         }
-
     }
 }

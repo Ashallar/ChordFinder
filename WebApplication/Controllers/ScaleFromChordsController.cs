@@ -35,9 +35,14 @@ namespace WebApplication.Controllers
             List<Note> distinctNotes = chordsList.GetDistinctNotesFromChordList();
             List<Scale> matchingScales = ScalesBook.GetMatchingScales(distinctNotes);
 
-            //TODO : Now we have matching scales, inject it via JS into the HTML
+            return Json(matchingScales.Select(x => x.ScaleName).ToList());
+        }
 
-            return Json(matchingScales);
+        [HttpGet]
+        public ActionResult OnScaleSelected(string scaleName)
+        {
+            // TODO: Need to understand why view isn't loading properly
+            return this.View("scaledetails");
         }
     }
 }
