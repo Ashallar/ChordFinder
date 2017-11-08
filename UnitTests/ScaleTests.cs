@@ -12,7 +12,7 @@ namespace UnitTests
         [TestMethod]
         public void ScaleTest()
         {
-            CMajorScale cScale = new CMajorScale();
+            MajorScale cScale = new MajorScale(new Note(NoteType.C));
 
             List<Note> notes = new List<Note>();
 

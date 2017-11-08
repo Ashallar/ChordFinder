@@ -82,7 +82,20 @@ function addScaleButton(scaleName, matchingScalesElement) {
 $(function () {
     // Using on because button was added dynamically, source: https://stackoverflow.com/questions/24099940/click-event-is-not-working-for-dynamically-added-button
     $(document).on('click', '.scales', function (e) {
-        $.get('/scalefromchords/onscaleselected?scalename=' + e.target.innerHTML);
+        //$.get('/scalefromchords/onscaleselected?scalename=' + e.target.innerHTML);
+
+        $.ajax({
+            url: '/scalefromchords/onscaleselected?scalename=' + e.target.innerHTML,
+            //data: postdata,
+            method: 'GET',
+            //datatype: 'json',
+            success: function (response, status) {
+                console.log(response);
+            },
+            error: function (response, status, error) {
+                alert('An error has occured');
+            }
+        });
     });
 
     // ON CHORDS BUTTON CLICKED BEHAVIOR

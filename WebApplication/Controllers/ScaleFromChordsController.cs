@@ -42,7 +42,10 @@ namespace WebApplication.Controllers
         public ActionResult OnScaleSelected(string scaleName)
         {
             // TODO: Need to understand why view isn't loading properly
-            return this.View("scaledetails");
+
+            Scale scale = ScalesBook.GetAllScales().Find(x => x.ScaleName.Equals(scaleName));
+
+            return this.View("scaledetails", scale);
         }
     }
 }

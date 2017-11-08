@@ -1,7 +1,10 @@
-﻿
+﻿@model MidiControllerProject.Library.Scales.Scale
 @{
     ViewBag.Title = "scaledetails";
 }
 
-<h2>Scale détails</h2>
+<h2>Scale détails: @(Model?.ScaleName ?? "Not determined")</h2>
 
+<div>
+    <p>this is a text that should be displayed</p>
+</div>
